@@ -15,7 +15,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="container">
+	<div class="container"> 
 
 		<div class="panel panel-default">
 			<div class="panel-heading">
