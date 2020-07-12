@@ -14,7 +14,9 @@
 <script src="<c:url value='/css/bootstrap/js/bootstrap.min.js'/>"></script>
 <script type="text/javaScript" language="javascript">
 $(document).ready(function(){
-	
+	<c:if test="${!empty msg}">
+	 alert("${msg}");
+	</c:if> 
 });
 function add(){
 	location.href = "<c:url value='/mgmt.do'/>";
@@ -42,6 +44,9 @@ function check(){
 	}
 	return true;
 }
+function out(){
+	location.href="<c:url value='/logout.do'/>";
+}
 </script>
 <title>Insert title here</title>
 </head>
@@ -50,6 +55,7 @@ function check(){
 
 		<div class="panel panel-default">
 			<div class="panel-heading">
+			<c:if test="${sessionScope == null || sessionScope.userId == null || sessionScope.userId == '' }">
 				<form class="form-inline" method="post" action="<c:url value='/login.do'/>">
 					<div class="form-group">
 						<label for="id">ID:</label>
@@ -66,7 +72,13 @@ function check(){
 					</div>
 					<button type="submit" class="btn btn-default" onclick="return check();">로그인</button>
 				</form>
-			</div>
+				</c:if>
+				
+				<c:if test="${ sessionScope.userId != null && sessionScope.userId != ''}">
+				${sessionScope.userName}님 환영합니다.
+				<button type="button" class="btn btn-default" onclick="out();">로그아웃</button>
+				</c:if>
+			</div>    
 
 			<div class="panel-body">
 			<form class="form-inline" action="/list.do">
