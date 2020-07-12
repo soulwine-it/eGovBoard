@@ -12,4 +12,15 @@ public class BoardController {
 			
 			return "board/list";
 		}
+		
+		@RequestMapping(value="mgmt.do")
+		public String mgmt(ModelMap model) throws Exception{
+			
+			return "board/mgmt";
+		}
+		@RequestMapping(value="view.do")
+		public String view(ModelMap model) throws Exception{
+			
+			return "board/view";
+		}
 }

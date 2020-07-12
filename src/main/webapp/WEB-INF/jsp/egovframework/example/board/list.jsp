@@ -12,6 +12,14 @@
 <link rel="stylesheet" href="<c:url value='/css/bootstrap/css/bootstrap.min.css'/>">
 <script src="<c:url value='/js/jquery-3.5.1.min.js'/>"></script>
 <script src="<c:url value='/css/bootstrap/js/bootstrap.min.js'/>"></script>
+<script type="text/javaScript" language="javascript">
+function add(){
+	location.href = "<c:url value='/mgmt.do'/>";
+}
+function view(){
+	location.href = "<c:url value='/view.do'/>";
+}
+</script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -46,34 +54,29 @@
 					<table class="table table-hover">
 						<thead>
 							<tr>
-								<th>Firstname</th>
-								<th>Lastname</th>
-								<th>Email</th>
+								<th>게시물 번호</th>
+								<th>제목</th>
+								<th>조회수</th>
+								<th>등록자</th>
+								<th>등록일</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>John</td>
-								<td>Doe</td>
-								<td>john@example.com</td>
+								<td><a href="javascript:view();">1</a></td>
+								<td><a href="javascript:view();">1</a></td>
+								<td>1</td>
+								<th>1</th>
+								<th>11</th>
 							</tr>
-							<tr>
-								<td>Mary</td>
-								<td>Moe</td>
-								<td>mary@example.com</td>
-							</tr>
-							<tr>
-								<td>July</td>
-								<td>Dooley</td>
-								<td>july@example.com</td>
-							</tr>
+							
 						</tbody>
 					</table>
 				</div>
 			</div>
 
 			<div class="panel-footer">버튼
-				<button type="button" class="btn btn-default">등록</button>
+				<button type="button" class="btn btn-default" onclick="add()">등록</button>
 			</div>
 		</div>
 
